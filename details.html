@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniEvents - Event Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="UniEvents Logo" width="100">
+    <h1>UniEvents</h1>
+    <p>University Events & Registration Platform</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="details.html">Event Details</a>
+    <a href="my-events.html">My Events</a>
+    <a href="organizer.html">Organizer</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<main>
+
+<h2>Event Details</h2>
+<p>Find more information about our university events.</p>
+
+<h3>Programming Workshop</h3>
+<img src="programming.jpg" alt="Programming Workshop" width="300">
+<p>Date: 15 October 2026</p>
+<p>Time: 10:00 AM - 12:00 PM</p>
+<p>Location: SQU Campus</p>
+<p>Capacity: 30 students</p>
+<p>Learn basic programming skills in this workshop.</p>
+
+<h3>Football Tournament</h3>
+<img src="football.jpg" alt="Football Tournament" width="300">
+<p>Date: 20 October 2026</p>
+<p>Time: 4:00 PM - 6:00 PM</p>
+<p>Location: Sports Complex</p>
+<p>Capacity: 50 students</p>
+<p>Join a football tournament with other students.</p>
+
+<h3>Career Development Workshop</h3>
+<img src="career.jpg" alt="Career Development Workshop" width="300">
+<p>Date: 25 October 2026</p>
+<p>Time: 10:00 AM - 12:00 PM</p>
+<p>Location: Main Hall</p>
+<p>Capacity: 40 students</p>
+<p>Learn how to prepare for your future career.</p>
+
+<h2>Event Registration</h2>
+<p>Fill in the form below to register for an event.</p>
+
+<form action="https://httpbin.org/get" method="get">
+
+    <p>Full Name:</p>
+    <input type="text" name="fullname" required>
+
+    <p>Student ID:</p>
+    <input type="text" name="studentid" required>
+
+    <p>Email Address:</p>
+    <input type="email" name="email" required>
+
+    <p>Select Event:</p>
+    <select name="event" required>
+        <option value="">Choose an event</option>
+        <option value="Programming Workshop">Programming Workshop</option>
+        <option value="Football Tournament">Football Tournament</option>
+        <option value="Career Development Workshop">Career Development Workshop</option>
+    </select>
+
+    <p>
+        <input type="checkbox" name="agree" value="yes" required>
+        I agree to register for this event.
+    </p>
+
+    <p>
+        <input type="submit" value="Register Now">
+        <input type="reset" value="Clear">
+    </p>
+
+</form>
+
+</main>
+
+<footer>
+    <p>2026 UniEvents - Sultan Qaboos University</p>
+</footer>
+
+</body>
+</html>

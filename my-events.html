@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniEvents - My Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="UniEvents Logo" width="100">
+    <h1>UniEvents</h1>
+    <p>University Events & Registration Platform</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="details.html">Event Details</a>
+    <a href="my-events.html">My Events</a>
+    <a href="organizer.html">Organizer</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<main>
+
+<h2>My Events</h2>
+<p>View your registered university events.</p>
+
+<h3>Registered Events</h3>
+
+<table>
+    <tr>
+        <th colspan="4">My Registered Events</th>
+    </tr>
+    <tr>
+        <th>Event Name</th>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Programming Workshop</td>
+        <td>15 October 2026</td>
+        <td>SQU Campus</td>
+        <td>Registered</td>
+    </tr>
+    <tr>
+        <td>Football Tournament</td>
+        <td>20 October 2026</td>
+        <td>Sports Complex</td>
+        <td>Registered</td>
+    </tr>
+    <tr>
+        <th colspan="3">Total Registered Events</th>
+        <th>2</th>
+    </tr>
+</table>
+
+<h2>Cancel Registration</h2>
+<p>Fill in the form below to request registration cancellation.</p>
+
+<form action="https://httpbin.org/get" method="get">
+
+    <p>Full Name:</p>
+    <input type="text" name="fullname" required>
+
+    <p>Student ID:</p>
+    <input type="text" name="studentid" required>
+
+    <p>Select Event:</p>
+    <select name="event" required>
+        <option value="">Choose an event</option>
+        <option value="Programming Workshop">Programming Workshop</option>
+        <option value="Football Tournament">Football Tournament</option>
+        <option value="Career Development Workshop">Career Development Workshop</option>
+    </select>
+
+    <p>Reason for Cancellation:</p>
+    <textarea name="reason" rows="4" cols="35"></textarea>
+
+    <p>
+        <input type="checkbox" name="confirm" value="yes" required>
+        I confirm my cancellation request.
+    </p>
+
+    <p>
+        <input type="submit" value="Cancel Registration">
+        <input type="reset" value="Clear">
+    </p>
+
+</form>
+
+<h2>Explore More Events</h2>
+<p>
+    Want to join another event?
+    <a href="events.html">View Available Events</a>
+</p>
+
+</main>
+
+<footer>
+    <p>2026 UniEvents - Sultan Qaboos University</p>
+</footer>
+
+</body>
+</html>

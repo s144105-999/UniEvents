@@ -1,0 +1,220 @@
+
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+/* General Style */
+body {
+    background-color: beige;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+nav {
+    background-color: gray;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+nav a:link {
+    color: white;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+nav a:active {
+    color: orange;
+}
+
+/* Headings and Paragraphs */
+h2, h3 {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: darkblue;
+}
+
+h3 {
+    color: black;
+}
+
+p {
+    margin: 20px;
+    line-height: 1.5;
+}
+
+main > p {
+    text-indent: 10px;
+}
+
+/* Class Selector */
+h3.highlight {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Generic Selector */
+.highlight {
+    color: brown;
+}
+
+/* ID Selector */
+#main-title {
+    text-align: center;
+}
+
+/* Lists */
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tables */
+table {
+    width: 90%;
+    margin: 20px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+/* Forms */
+form {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    margin: 5px;
+    max-width: 100%;
+}
+
+input[type="email"] {
+    background-color: lightyellow;
+}
+
+input[type="submit"] {
+    background-color: gold;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    background-color: lightgray;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: lightyellow;
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    form {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
