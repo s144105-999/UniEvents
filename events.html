@@ -165,13 +165,11 @@
             const time =document.getElementById('eventTime').value;
             const location =document.getElementById('eventLocation').value;
             const status =document.getElementById('eventStatus').value;
-
             const newEvent=new EventObject(name, date, time, location, status);
             eventsArray.push(newEvent);
             displayEventsTable(eventsArray);
             document.getElementById("eventForm").reset();
         }
-
         function searchEvents(){
             let keyword=document.getElementById("searchBox").value.toLowerCase();
             let filteredEvents=[];
