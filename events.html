@@ -92,9 +92,11 @@
     <input type="text" id="searchBox" class="form-control" placeholder="Search by event name or location" onkeyup="searchEvents()">
 </div></div>
 <!--dynamic table-->
-<table border="1" cellpadding="10" cellspacing="0">
+<div class="table-responsive mb-4">
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
     <tr>
-        <th colspan="5">University Events Schedule</th>
+        <th colspan="5" class="text-center">University Events Schedule</th>
     </tr>
     <tr>
         <th>Event Name</th>
@@ -103,36 +105,99 @@
         <th>Location</th>
         <th>Status</th>
     </tr>
-    <tr>
-        <td>Programming Workshop</td>
-        <td>15 October 2026</td>
-        <td>10:00 AM</td>
-        <td>SQU Campus</td>
-        <td rowspan="3">Open for registration</td>
-    </tr>
-    <tr>
-        <td>Football Tournament</td>
-        <td>20 October 2026</td>
-        <td>4:00 PM</td>
-        <td>Sports Complex</td>
-    </tr>
-    <tr>
-        <td>Career Development Workshop</td>
-        <td>25 October 2026</td>
-        <td>10:00 AM</td>
-        <td>Main Hall</td>
-    </tr>
-    <tr>
-        <th colspan="4">Total Events</th>
-        <th>3</th>
-    </tr>
+    </thead>
+    <tbody id="eventsBody"></tbody>
+    <tfoot class="table-secondary">
+        <tr><th colspan="4" class="text-end">Total Events</th><th id="totalEvents">0</th></tr>
+    </tfoot>
 </table>
+</div>
+
+<h4 class="text-primary mb-3">Add New Event</h4>
+        <form id="eventForm" onsubmit="addEvent(event)" class="row g-3">
+            <div class="col-md-3">
+            <label class="form-label">Event Name</label>
+            <input type="text" id="eventName" class="form-control" required></div>
+            <div class="col-md-3">
+            <label class="form-label">Date</label>
+            <input type="text" id="eventDate" class="form-control" placeholder="8 january 2026" required></div>
+            <div class="col-md-2">
+            <label class="form-label">Time</label>
+            <input type="text" id="eventTime" class="form-control" placeholder="4:15 PM" required></div>
+            <div class="col-md-2">
+            <label class="form-label">Location</label>
+            <input type="text" id="eventLocation" class="form-control" placeholder="main laibry" required ></div>
+            <div class="col-md-2">
+            <label class="form-label">Status</label>
+            <input type="text" id="eventStatus" class="form-control" value="Open for registration" required></div>
+            <div class="col-12">
+            <button type="submit" class="btn btn-primary">Add Event</button>
+            <button type="reset" class="btn btn-secondary">Clear</button></div>
+        </form>
+    </section>
+
 </main>
 
-<footer>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
     <p>2026 UniEvents - Sultan Qaboos University</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+        function EventObject(name, date, time, location, status) {
+            this.name = name;
+            this.date = date;
+            this.time = time;
+            this.location = location;
+            this.status = status;
+        }
+        let eventsArray = [
+        new EventObject("Programming Workshop", "15 October 2026", "10:00 AM", "SQU Campus", "Open for registration"),
+        new EventObject("Football Tournament", "20 October 2026", "4:00 PM", "Sports Complex", "Open for registration"),
+        new EventObject("Career Development Workshop", "25 October 2026", "10:00 AM", "Main Hall", "Open for registration")];
+
+        function addEvent(event) {
+            event.preventDefault();
+            const name =document.getElementById('eventName').value;
+            const date =document.getElementById('eventDate').value;
+            const time =document.getElementById('eventTime').value;
+            const location =document.getElementById('eventLocation').value;
+            const status =document.getElementById('eventStatus').value;
+            const newEvent=new EventObject(name, date, time, location, status);
+            eventsArray.push(newEvent);
+            displayEventsTable(eventsArray);
+            document.getElementById("eventForm").reset();
+        }
+        function searchEvents(){
+            let keyword=document.getElementById("searchBox").value.toLowerCase();
+            let filteredEvents=[];
+            for (let i=0;i<eventsArray.length;i++){
+                if (eventsArray[i].name.toLowerCase().includes(keyword)||eventsArray[i].location.toLowerCase().includes(keyword)){
+                    filteredEvents.push(eventsArray[i]);
+             }
+        }
+        displayEventsTable(filteredEvents);
+        }
+
+        function displayEventsTable(list){
+            let tbody = document.getElementById("eventsBody");
+            tbody.innerHTML = "";
+            for(let i=0;i<list.length;i++){
+                let row = "<tr>"+
+                    "<td>"+list[i].name+"</td>"+
+                    "<td>"+list[i].date+"</td>"+
+                    "<td>"+list[i].time+"</td>"+
+                    "<td>"+list[i].location+"</td>"+
+                    "<td>"+list[i].status+"</td>"+
+                    "</tr>";
+                tbody.innerHTML += row;
+            }
+            document.getElementById("totalEvents").textContent = list.length;
+        }
+        displayEventsTable(eventsArray);
+</script>
 </body>
 </html>
 
