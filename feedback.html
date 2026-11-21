@@ -48,15 +48,15 @@
 
 <form action="https://httpbin.org/get" method="get">
     <div class="mb-3">
-    <label for="fullname" class="form-label fw-bold">Full Name:</label>
+    <p for="fullname" class="form-label fw-bold">Full Name:</p>
     <input type="text" name="fullname" id="fullname" class="form-control" required></div>
 
     <div class="mb-3">
-    <label for="email" class="form-label fw-bold">Email Address:</lable>
+    <p for="email" class="form-label fw-bold">Email Address:</p>
     <input type="email" name="email" class="form-control" id="email" required></div>
 
     <div class="mb-3">
-    <label for="eventSelect" class="form-label fw-bold">Select Event:</label>
+    <p for="eventSelect" class="form-label fw-bold">Select Event:</p>
     <select id="eventSelect" name="event" class="form-select" required>
         <option value="">Choose an event</option>
         <option value="Programming Workshop">Programming Workshop</option>
@@ -84,39 +84,41 @@
     </div></div>
 
     <div class="mb-3">
-        <label for="liked" class="form-label fw-bold">What did you like about the event?</label>
+        <p for="liked" class=" fw-bold">What did you like about the event?</p>
         <textarea id="liked" name="liked" class="form-control" rows="4"></textarea>
     </div>
 
-    <p>What can we improve?</p>
-    <textarea name="improvements" rows="4" cols="35"></textarea>
-
+    <div class="mb-3">
+    <p class="fw-bold mb-1">What can we improve?</p>
+    <textarea name="improvements" rows="4" cols="35" class="form-control"></textarea></div>
+    <div class="form-check mb-4">
     <p>
-        <input type="checkbox" name="recommend" value="yes">
+        <input type="checkbox" name="recommend" value="yes" class="form-check-input">
         I would recommend this event to other students.
-    </p>
+    </p></div>
 
-    <p>
-        <input type="submit" value="Submit Feedback">
-        <input type="reset" value="Clear">
-    </p>
+    <div>
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        <button type="reset" class="btn btn-secondary">Clear</button>
+    </div>
 
-</form>
+</form></div>
 
-<h2>Why Is Your Feedback Important?</h2>
+<div class="bg-white rounded shadow-sm p-4">
+<h2 class="text-primary fw-bold">Why Is Your Feedback Important?</h2>
 
-<ul>
-    <li>It helps us improve future events.</li>
-    <li>It helps organizers understand student needs.</li>
-    <li>It encourages better university activities.</li>
+<ul class="list-group mt-3 mb-3">
+    <li class="list-group-item">It helps us improve future events.</li>
+    <li class="list-group-item">It helps organizers understand student needs.</li>
+    <li class="list-group-item">It encourages better university activities.</li>
 </ul>
 
-<p>Thank you for sharing your feedback!</p>
+<p class="mb-0 fw-bold">Thank you for sharing your feedback!</p></div>
 
 </main>
 
-<footer>
-    <p>2026 UniEvents - Sultan Qaboos University</p>
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">2026 UniEvents - Sultan Qaboos University</p>
 </footer>
 
 </body>
