@@ -1,164 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>UniEvents - Event Cost Calculator</title>
+    <title>UniEvents - Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
+
 <body class="bg-light">
 
-<header class="bg-dark text-white text-center py-4">
-    <img src="logo.png" alt="UniEvents Logo" width="100" class="img-fluid">
-    <h1 class="mt-2">UniEvents</h1>
-    <p class="mb-0">University Events & Registration Platform</p>
-</header>
+    <header class="bg-dark text-white text-center py-4">
+        <img src="logo.png" alt="UniEvents Logo" width="100">
+        <h1 class="mt-2">UniEvents</h1>
+        <p class="mb-0">University Events & Registration Platform</p>
+    </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">UniEvents</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">UniEvents</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="details.html">Event Details</a></li>
-                <li class="nav-item"><a class="nav-link" href="my-events.html">My Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="organizer.html">Organizer</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link active" href="calculate.html">Calculator</a></li>
-                <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Game</a></li>
-            </ul>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="details.html">Event Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-events.html">My Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="organizer.html">Organizer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="questionnaire.html">Questionnaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calculate.html">Calculator</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<main class="container my-5">
-    <div class="bg-white rounded shadow-sm p-4 mb-4">
-    <h2 class="text-primary fw-bold">Event Registration Cost Calculator</h2>
-    <p class="text-muted">Calculate your total ticket cost including student and group discounts.</p>
-    <form id="calcForm" class="row g-3">
-        <div class="col-md-6">
-        <p class="fw-bold mb-1">Select Event:</p>
-        <select id="eventChoice" class="form-select">
-            <option value="0">Choose an event</option>
-            <option value="5">Programming Workshop (5 OMR / ticket)</option>
-            <option value="3">Football Tournament (3 OMR / ticket)</option>
-            <option value="4">Career Development Workshop (4 OMR / ticket)</option>
-        </select>
-        </div>
-        <div class="col-md-6">
-        <p class="fw-bold mb-1">Number of Tickets:</p>
-        <input type="number" id="ticketQty" class="form-control" min="1" value="1">
-        </div>
+    <main class="container my-5">
 
-        <div class="col-md-6">
-        <p class="fw-bold mb-1">Participant Type:</p>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="userType" id="typeStudent" checked>
-            <label class="form-check-label" for="typeStudent">SQU Student (20% Discount)</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="userType" id="typeVisitor">
-            <label class="form-check-label" for="typeVisitor">External Visitor (Standard)</label>
-        </div>
+        <div class="text-center mb-4">
+            <h2 class="text-primary">Event Capacity Calculator</h2>
+            <p class="text-muted">
+                Calculate the available seats for university events.
+            </p>
         </div>
 
-        <div class="col-md-6">
-        <p class="fw-bold mb-1">Extra Options:</p>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="mealOption">
-            <label class="form-check-label" for="mealOption">Add Refreshments Package (+1.5 OMR per ticket)</label>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+
+                        <h3 class="mb-3">Event Information</h3>
+
+                        <form id="capacityForm" class="needs-validation" novalidate>
+
+                            <div class="mb-3">
+                                <label for="eventName" class="form-label">
+                                    Event Name:
+                                </label>
+                                <input type="text" class="form-control" id="eventName" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="eventType" class="form-label">
+                                    Event Category:
+                                </label>
+                                <select class="form-select" id="eventType" required>
+                                    <option value="">Choose a category</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Academic">Academic</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="capacity" class="form-label">
+                                    Total Capacity:
+                                </label>
+                                <input type="number" class="form-control" id="capacity" min="1" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="registered" class="form-label">
+                                    Currently Registered:
+                                </label>
+                                <input type="number" class="form-control" id="registered" min="0" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="newRegistrations" class="form-label">
+                                    New Registrations:
+                                </label>
+                                <input type="number" class="form-control" id="newRegistrations" min="0" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Calculate
+                            </button>
+
+                        </form>
+
+                        <div id="result" class="mt-4"></div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-        </div>
 
-        <div class="col-12">
-            <button type="button" class="btn btn-primary" onclick="calculateCost()">Calculate Total</button>
-            <button type="reset" class="btn btn-secondary" onclick="clearResult()">Clear</button>
-        </div>
-        </form></div>
+    </main>
 
-    <!--the result Box is hidden at first-->
-    <div id="resultBox" class="bg-white rounded shadow-sm p-4" style="display:none;">
-    <h3 class="text-success fw-bold mb-3">Cost Summary</h3>
-    <ul class="list-group">
-        <li class="list-group-item">Tickets Subtotal: <strong id="subTotalText">0 OMR</strong></li>
-        <li class="list-group-item">Refreshments Cost: <strong id="mealText">0 OMR</strong></li>
-        <li class="list-group-item text-danger">Discount Amount: <strong id="discountText">0 OMR</strong></li>
-        <li class="list-group-item list-group-item-success fs-5">Final Total: <strong id="finalTotalText">0 OMR</strong></li>
-    </ul>
-    <p id="discountNote" class="text-muted mt-2 mb-0"></p>
-    </div></main>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">2026 UniEvents - Sultan Qaboos University</p>
+    </footer>
 
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    <p class="mb-0">2026 UniEvents - Sultan Qaboos University</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    //this function calculates the cost of the event which is selected
-    function calculateCost(){
-        //get values from html
-        var ticketPrice =parseFloat(document.getElementById("eventChoice").value);
-        var quantity =parseInt(document.getElementById("ticketQty").value);
-        var isStudent =document.getElementById("typeStudent").checked;
-        var hasMeal =document.getElementById("mealOption").checked;
-        //this check if user selected an event and enter a valid ticket number
-        if(ticketPrice == 0){
-            alert("Please select an event first.");
-            document.getElementById("eventChoice").focus();
-            return;}
-        if(isNaN(quantity)||quantity<1){
-            alert("Please enter a valid number of tickets (1 or more).");
-            document.getElementById("ticketQty").focus();
-            return;}
-        //this to calculate base subtotal using multiplication operator
-        var subtotal =ticketPrice * quantity;
-        //this calculate optional refreshments cost
-        var mealCost =0;
-        if(hasMeal){
-            mealCost =1.5*quantity;}
-        //this determine discount rate
-        var discountRate = 0;
-        var note = "";
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        if(isStudent&&quantity>=3){
-            //20% student discount +10% group discount =30%
-            discountRate = 0.30;
-            note = "30% Discount applied (20% SQU Student + 10% Group Booking).";}
-        else if(isStudent){
-            //20% student discount only
-            discountRate=0.20;
-            note="20% SQU Student Discount applied.";} 
-        else if(!isStudent&&quantity>=3){
-            //10% group discount for 3 or more tickets
-            discountRate =0.10;
-            note ="10% Group Booking Discount applied.";} 
-        else{
-            discountRate = 0;
-            note = "No discount applied.";}
-        //this calculate discount and final total
-        var discountAmount =Math.round((subtotal*discountRate)*100)/100;
-        var finalTotal =Math.round(((subtotal+mealCost)-discountAmount)*100)/100;
+    <script>
 
-        //this to display the results
-        document.getElementById("subTotalText").innerHTML =subtotal+" OMR";
-        document.getElementById("mealText").innerHTML = mealCost+" OMR";
-        document.getElementById("discountText").innerHTML = "-"+discountAmount+" OMR";
-        document.getElementById("finalTotalText").innerHTML = finalTotal+" OMR";
-        document.getElementById("discountNote").innerHTML=note;
-        //this to show the hidden result box
-        document.getElementById("resultBox").style.display = "block";}
+        //get the form
+        const form = document.getElementById("capacityForm");
 
-    //this function hides the result box when Clear button is clicked
-    function clearResult() {
-        document.getElementById("resultBox").style.display = "none";}
-</script>
+        //listen for the Calculate button
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            //check if all fields are filled correctly
+            if (!form.checkValidity()) {
+                form.classList.add("was-validated");
+                return;}
+            //get values from the form
+            const eventName =document.getElementById("eventName").value;
+            const eventType =document.getElementById("eventType").value;
+            const capacity =Number(document.getElementById("capacity").value);
+            const registered =Number(document.getElementById("registered").value);
+            const newRegistrations =Number(document.getElementById("newRegistrations").value);
+
+            //this check that the current registrations do not exceed capacity
+            if (registered > capacity) {
+                alert("Registered students cannot exceed total capacity.");
+                return;}
+
+            //this calculate total registered students
+            const totalRegistered =registered+newRegistrations;
+
+            //this calculate available seats
+            const availableSeats =capacity-totalRegistered;
+
+            //this calculate occupancy percentage
+            const occupancy = (totalRegistered * 100) / capacity;
+
+            //this select the event category using switch
+            let category;
+            switch (eventType){
+                case "Technology":
+                    category = "Technology Event";
+                    break;
+                case "Sports":
+                    category = "Sports Event";
+                    break;
+                case "Cultural":
+                    category = "Cultural Event";
+                    break;
+                case "Academic":
+                    category = "Academic Event";
+                    break;
+                default:
+                    category = "Unknown Event";}
+            //this determine the event status using if and else
+            let status;
+            if(totalRegistered>capacity){
+                status ="The event is over capacity.";}
+            else if(totalRegistered === capacity){
+                status ="The event is fully booked.";} 
+            else if(occupancy >= 80 && occupancy < 100){
+                status ="The event is almost full.";}
+            else{
+                status ="There are available seats.";}
+
+            //display the results
+            document.getElementById("result").innerHTML =
+                "<h4>Calculation Results</h4>" +
+                "<p>Event Name: " + eventName + "</p>" +
+                "<p>Category: " + category + "</p>" +
+                "<p>Total Registered: " + totalRegistered + "</p>" +
+                "<p>Available Seats: " + availableSeats + "</p>" +
+                "<p>Occupancy: " + occupancy.toFixed(2) + "%</p>" +
+                "<p><strong>Status: " + status + "</strong></p>";});
+
+    </script>
+
 </body>
+
 </html>
